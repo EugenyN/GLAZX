@@ -1,1 +1,4 @@
+# Fix for wrong language detection. see https://github.com/github/linguist
+
 utils/* linguist-vendored
+*.h linguist-language=C
