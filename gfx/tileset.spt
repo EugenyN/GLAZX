@@ -1,0 +1,23 @@
+# Creates the full tileset to be preloaded at the main binary.
+# Exports a set of tilemaps and related metadata
+
+reset patterns
+reset tmaps
+
+# Font, 64 patterns
+
+open font.png
+charset 0, 0, 32, 2
+
+# Metatileset
+
+open tiles.png
+defaultink 7
+metatileset 0, 0, 8, 3, 2, 2
+output tmaps ../res/ts.tilemaps.bin
+reset tmaps
+
+# Done
+
+stats
+output patterns ../res/ts.bin
