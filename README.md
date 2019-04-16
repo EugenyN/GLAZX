@@ -53,17 +53,17 @@ Ready for play .tap files:
 * If you don’t have the hardware, you can still play it in an emulator. E.g. you can use [Fuse](http://fuse-emulator.sourceforge.net/) for Windows and Linux.
 * You can also [play it online](http://torinak.com/qaop) thanks to Qaop/JS.
  
-## How to build
+## How to build (for Windows)
 
 * Z88DK installation:
-	* Download the latest precompiled version of z88dk from [site](http://nightly.z88dk.org/) and unpack the archive for example in `c:\z88dk`. The game can also be compiled on early versions of z88dk. See comments in `dev\compile.bat`
-	* Set the environment variables using `libs\setenv-z88dk.bat`. We assume sdk is installed in the `c:\z88dk`. More information about the z88dk installation and manual compilation can be found [here](https://github.com/z88dk/z88dk/wiki/installation).
+	* Download the latest precompiled version of z88dk from [site](http://nightly.z88dk.org/) and unpack the archive for example in `c:\z88dk`. The game can also be compiled on early versions of z88dk. See comments in `src/compile.bat`
+	* Set the environment variables using `libs/setenv-z88dk.bat`. We assume sdk is installed in the `c:\z88dk`. More information about the z88dk installation and manual compilation can be found [here](https://github.com/z88dk/z88dk/wiki/installation).
 * SP1 library compilation:
 	* Enter `make sp1-spectrum` from the `{z88dk}/libsrc` directory to build the library. Header file `sp1.h` will be created in the `{z88dk}/include/sprites` directory.
 	* Then enter `make install` to copy `sp1.lib` from `{z88dk}/libsrc` to `z88dk/lib/clibs`
 * Or you can download z88dk with precompiled and installed `sp1.lib` [here](/libs/z88dk-win32-20190408.zip?raw=true).
 * GLAZX compilation:
-	* To build resources, compile and create a .tap file use `dev\buildbins.bat` and `dev\compile.bat`.
+	* To build resources, compile and create a .tap file use `src/buildbins.bat` and `src/compile.bat`.
 
 The machine RAM and resources of the Z80 processor are very limited, so we use various optimization tricks: there are no dynamic data types, it's used minimum variables on stack, global variables are reused, data compression algorithms (rle, appack) are used, bit shifts instead of multiplication and division. The code and resources should be directly mapped in RAM to specific addresses, memory paging are used for 128 ver. Debugging is only in assembler.
 
