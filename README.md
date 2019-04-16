@@ -43,8 +43,8 @@ In the options menu you can choose the alternative control including **Kempston*
 ## Download
 
 Ready for play .tap files:
-* [GLAZX v1.0](https://github.com/EugenyN/glazx/releases/download/1/glazx48.tap) for Spectrum 48
-* [GLAZX v1.0 128](https://github.com/EugenyN/glazx/releases/download/1/glazx128.tap) for Spectrum 128
+* [GLAZX v1.0](https://github.com/EugenyN/GLAZX/releases/download/v1.0/glazx48.tap) for Spectrum 48
+* [GLAZX v1.0 128](https://github.com/EugenyN/glazx/releases/download/v1.0/glazx128.tap) for Spectrum 128
 
 ## How to load
 
