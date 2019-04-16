@@ -61,7 +61,7 @@ Ready for play .tap files:
 * SP1 library compilation:
 	* Enter `make sp1-spectrum` from the `{z88dk}/libsrc` directory to build the library. Header file `sp1.h` will be created in the `{z88dk}/include/sprites` directory.
 	* Then enter `make install` to copy `sp1.lib` from `{z88dk}/libsrc` to `z88dk/lib/clibs`
-* Or you can download z88dk with precompiled and installed `sp1.lib` [here](/libs/z88dk-win32-20190408.zip).
+* Or you can download z88dk with precompiled and installed `sp1.lib` [here](/libs/z88dk-win32-20190408.zip?raw=true).
 * GLAZX compilation:
 	* To build resources, compile and create a .tap file use `dev\buildbins.bat` and `dev\compile.bat`.
 
