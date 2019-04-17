@@ -23,9 +23,9 @@ void interrupts_init()
 #asm
 	di
 #endasm
-	im2_Init(0xd000); // place z80 in im2 mode with interrupt vector table located at 0xf1f1
+	im2_Init(0xd000); // place z80 in im2 mode with interrupt vector table located at 0xd000
 	memset(0xd000, 0xd1, 257); // create a 257-byte im2 vector table containing 0xd1 bytes
-	im2_CreateGenericISR(1, 0xd1d1); // create a Generic ISR at address 0xf1f1 with space for hooks
+	im2_CreateGenericISR(1, 0xd1d1); // create a Generic ISR at address 0xd1d1 with space for hooks
 	im2_RegHooKFirst(255, isr_callback);
 #asm
 	ei
