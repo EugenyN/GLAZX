@@ -2,7 +2,7 @@
 // Copyleft 2017, 2018 by The Mojon Twins
 
 #define MAP_FORMAT_RLE53
-#define MAP_CHARSWIDTH 		MAP_WIDTH * 2
+#define MAP_CHARSWIDTH		MAP_WIDTH * 2
 
 // Screen tiles
 

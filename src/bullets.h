@@ -111,7 +111,7 @@ unsigned char collide_with_player()
 		if (p_state_frame_counter[jt] == ATTACK_ANIMATION_TIME - 1)
 			continue;
 		if (_x == TL(spr_x[SPR_PLAYER_BASE + jt]) &&
-		 	_y == TL(spr_y[SPR_PLAYER_BASE + jt])) {
+			_y == TL(spr_y[SPR_PLAYER_BASE + jt])) {
 			glaz_hit(jt);
 			return 1;
 		}

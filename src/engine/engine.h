@@ -1,6 +1,6 @@
 // Copyright (c) 2019 Eugeny Novikov. Code under MIT license.
 
-long heap;   // the four-byte heap pointer required by the malloc library to keep track of malloc's heap
+long heap;	 // the four-byte heap pointer required by the malloc library to keep track of malloc's heap
 
 void *u_malloc(unsigned int size) {
 	return malloc(size);
@@ -40,7 +40,7 @@ void system_init()
 	interrupts_init();
 
 	// reserve memory blocks for sprites
-	heap = 0L;  // malloc's heap is empty
+	heap = 0L;	// malloc's heap is empty
 	sbrk(MALLOC_ADDR - SW_SPRITES_MEMORY, SW_SPRITES_MEMORY); // add memory to malloc's heap
 
 	zx_border(INK_BLACK);
@@ -70,41 +70,41 @@ void screen_fade_out()
 	.fade_out_extern
 		push bc
 
-		ld   e, 3               ; 3 thirds
-		ld   hl, 22528          ; here the attributes begin
+		ld	 e, 3				; 3 thirds
+		ld	 hl, 22528			; here the attributes begin
 	#endasm
 #ifdef MODE_128K
 	#asm
-		halt                    ; we wait for delay.
+		halt					; we wait for delay.
 	#endasm
 #endif
 	#asm
 	.fade_out_loop
-		ld   a, (hl )           ; we bring the current attribute
+		ld	 a, (hl )			; we bring the current attribute
 
-		ld   d, a               ; take attribute
-		and  7                  ; isolate the ink
-		jr   z, ink_done        ; jumps if Z is set
-		dec  a                  ; decrease ink
+		ld	 d, a				; take attribute
+		and	 7					; isolate the ink
+		jr	 z, ink_done		; jumps if Z is set
+		dec	 a					; decrease ink
 	.ink_done
-		ld   b, a               ; in b we now have the ink already processed.
+		ld	 b, a				; in b we now have the ink already processed.
 
-		ld   a, d               ; take attribute
-		and  56                 ; Isolate the paper, without changing its position in the byte
-		jr   z, paper_done      ; jumps if Z is set
-		sub  8                  ; we decrease paper by subtracting 8
+		ld	 a, d				; take attribute
+		and	 56					; Isolate the paper, without changing its position in the byte
+		jr	 z, paper_done		; jumps if Z is set
+		sub	 8					; we decrease paper by subtracting 8
 	.paper_done
-		ld   c, a               ; in c we have now the paper already processed.
-		ld   a, d
-		and  192                ; we are left with bits 6 and 7 (BRIGHT and FLASH)
-		or   c                  ; add paper
-		or   b                  ; and ink, with which recomposed the attribute
-		ld   (hl),a             ; write,
-		inc  l                  ; and increase the pointer.
-		jr   nz, fade_out_loop  ; continue until finishing the third (when L is equal to 0)
-		inc  h                  ; next third
-		dec  e
-		jr   nz, fade_out_loop ; repeat 3 times
+		ld	 c, a				; in c we have now the paper already processed.
+		ld	 a, d
+		and	 192				; we are left with bits 6 and 7 (BRIGHT and FLASH)
+		or	 c					; add paper
+		or	 b					; and ink, with which recomposed the attribute
+		ld	 (hl),a				; write,
+		inc	 l					; and increase the pointer.
+		jr	 nz, fade_out_loop	; continue until finishing the third (when L is equal to 0)
+		inc	 h					; next third
+		dec	 e
+		jr	 nz, fade_out_loop ; repeat 3 times
 		pop bc
 		djnz fade_out_extern
 	#endasm

@@ -2,12 +2,12 @@
 
 // Memory layout
 
-#define MALLOC_ADDR 			0xD000
+#define MALLOC_ADDR				0xD000
 #ifdef MODE_128K
-	#define FREE_BUFFER 		0xD101 // 0xD101 = MALLOC_ADDR + 257
+	#define FREE_BUFFER			0xD101 // 0xD101 = MALLOC_ADDR + 257
 #else
 	// we can use printer buffer 0x5B00-0x5C00 on 48K Spectrum
-	#define FREE_BUFFER 		0x5B00
+	#define FREE_BUFFER			0x5B00
 #endif
 
 // Pixels and numbers
@@ -20,8 +20,8 @@
 
 // Sprite frames in spriteset resources
 
-#define MAX_FRAMES_16x16 		16
-#define MAX_FRAMES 				MAX_FRAMES_16x16
+#define MAX_FRAMES_16x16		16
+#define MAX_FRAMES				MAX_FRAMES_16x16
 
 #define ATTACK_FRAME_BASE		8
 #define EXPLOSION_FRAME_BASE	12
@@ -31,7 +31,7 @@
 
 #define SW_SPRITES_16x16		6 // 4 bullets + 2 glazes
 #define SW_SPRITES_ALL			6
-#define SW_SPRITES_BLOCKS 		(SW_SPRITES_16x16 * 10) // 1 + Row * Columns blocks for each sprite. e.g 16x16 sprite needs 1+3*3 = 10 blocks
+#define SW_SPRITES_BLOCKS		(SW_SPRITES_16x16 * 10) // 1 + Row * Columns blocks for each sprite. e.g 16x16 sprite needs 1+3*3 = 10 blocks
 #define SW_SPRITES_MEMORY		(SW_SPRITES_BLOCKS * 25) // 25 bytes (+1 overhead)
 
 // Sprite bases in array
@@ -43,11 +43,11 @@
 
 #define SCR_X					1
 #define SCR_Y					2
-#define SCR_BUFFER_SIZE 		150
+#define SCR_BUFFER_SIZE			150
 
 // Input
 
-#define INPUT_READ(p) 					((joyfunc[p]) (&keys[p]))
+#define INPUT_READ(p)					((joyfunc[p]) (&keys[p]))
 #define INPUT_LEFT(a)					((a) & in_LEFT)
 #define INPUT_RIGHT(a)					((a) & in_RIGHT)
 #define INPUT_UP(a)						((a) & in_UP)
@@ -60,8 +60,8 @@
 #define INPUT_DOWN_PRESSED(pad, last)	(INPUT_DOWN(pad) && !INPUT_DOWN(last))
 #define INPUT_FIRE_PRESSED(pad, last)	(INPUT_FIRE(pad) && !INPUT_FIRE(last))
 
-#define PAUSE_KEY 				0x087f
-#define EXIT_KEY 				0x047f
+#define PAUSE_KEY				0x087f
+#define EXIT_KEY				0x047f
 
 #define CTRL_KEYBOARD1			1
 #define CTRL_KEYBOARD2			2
@@ -71,24 +71,24 @@
 
 // Hud
 
-#define GLAZ_SYMBOL 			"^"
-#define GLAZ_SYMBOL2 			"_"
-#define BULLET_SYMBOL 			"*"
+#define GLAZ_SYMBOL				"^"
+#define GLAZ_SYMBOL2			"_"
+#define BULLET_SYMBOL			"*"
 #define STAT_X					6
 #define STAT_Y					0
-#define TIMER_X 				12
-#define TIMER_Y 				23
+#define TIMER_X					12
+#define TIMER_Y					23
 
 // Glazes
 
 #define FACING_RIGHT			0
-#define FACING_LEFT 			1
-#define FACING_UP 				2
-#define FACING_DOWN 			3
+#define FACING_LEFT				1
+#define FACING_UP				2
+#define FACING_DOWN				3
 
 #define IDLE_ANIMATION_TIME		8
-#define ATTACK_ANIMATION_TIME 	10
-#define EXPL_ANIMATION_TIME 	8
+#define ATTACK_ANIMATION_TIME	10
+#define EXPL_ANIMATION_TIME		8
 
 #define STATE_IDLE				0
 #define STATE_ATTACK			1
@@ -101,8 +101,8 @@
 
 // Bullets
 
-#define BULLET_SPEED 			1
-#define MAX_BULLETS 			4  // max number of bullets on screen.
+#define BULLET_SPEED			1
+#define MAX_BULLETS				4  // max number of bullets on screen.
 #define MAX_BULLETS_PER_GLAZ	2
 
 // Game
@@ -123,7 +123,7 @@
 #define GAMES_PLAYED_FOR_SECRET	8
 
 #define TIMER_INITIAL			99
-#define TIMER_LAPSE 			25	// # of frames between decrements
+#define TIMER_LAPSE				25	// # of frames between decrements
 
 // Maps and tiles
 
@@ -131,12 +131,12 @@
 #define MAP_WIDTH				15
 #define MAP_HEIGHT				10
 
-#define TILES_COUNT 			139 // font - 64 chars, background - 75 chars
+#define TILES_COUNT				139 // font - 64 chars, background - 75 chars
 #define AMMO_TILE				17
 #define LIVE_TILE				18
 #define GHOST_TILE				19
 #define ROCKET_TILE				20
-#define BONUS_TILE(t) 			((t) >= AMMO_TILE && (t) <= ROCKET_TILE)
+#define BONUS_TILE(t)			((t) >= AMMO_TILE && (t) <= ROCKET_TILE)
 
 #define WALKABLE_TILE_ATTR		0
 #define OBSTACLE_TILE_ATTR		8
@@ -144,7 +144,7 @@
 // Sound
 
 #ifdef MODE_128K
-	#define BASE_SOUND 			0xC000
+	#define BASE_SOUND			0xC000
 	#define SE_WYZ
 #else
 	#define SE_BEEPER
@@ -188,25 +188,25 @@
 // Sound engine
 
 #ifdef SE_WYZ
-	#define SE_INIT 			wyz_init
-	#define SE_ISR 				wyz_ISR
-	#define SFX_PLAY(n) 		wyz_play_sound(n)
-	#define MUSIC_PLAY(n) 		wyz_play_music(n)
+	#define SE_INIT				wyz_init
+	#define SE_ISR				wyz_ISR
+	#define SFX_PLAY(n)			wyz_play_sound(n)
+	#define MUSIC_PLAY(n)		wyz_play_music(n)
 	#define MUSIC_STOP			wyz_stop_sound
 #endif
 
 #ifdef SE_BEEPER
-	#define SE_INIT() 			;
+	#define SE_INIT()			;
 	#define SE_ISR()			;
-	#define SFX_PLAY(n) 		beep_fx(n)
-	#define MUSIC_PLAY(n) 		beep_play_music()
-	#define MUSIC_STOP() 		;
+	#define SFX_PLAY(n)			beep_fx(n)
+	#define MUSIC_PLAY(n)		beep_play_music()
+	#define MUSIC_STOP()		;
 #endif
 
 #ifdef SE_NONE
-	#define SE_INIT() 			;
+	#define SE_INIT()			;
 	#define SE_ISR()			;
-	#define SFX_PLAY(n) 		;
-	#define MUSIC_PLAY(n) 		;
-	#define MUSIC_STOP() 		;
+	#define SFX_PLAY(n)			;
+	#define MUSIC_PLAY(n)		;
+	#define MUSIC_STOP()		;
 #endif

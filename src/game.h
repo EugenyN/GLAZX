@@ -81,10 +81,10 @@ void level_init()
 	bonus_delay = gm_config.bonus_spawn_delay + rand8() % gm_config.bonus_spawn_delay;
 	game_end_result = GAME_END_NONE;
 
-	 if (current_map == (maps_count - 1))
-	 	generate_random_map(10);
-	 if (current_map == (maps_count - 2))
-	 	generate_random_map(20);
+	if (current_map == (maps_count - 1))
+		generate_random_map(10);
+	if (current_map == (maps_count - 2))
+		generate_random_map(20);
 
 	draw_map();
 	hud_init();
@@ -105,8 +105,8 @@ void title_screen_show()
 		// we have problems with lots of emulators when reading Kempston
 		// if (in_JoyKempston() & in_FIRE)
 		// {
-		// 	it = 2;
-		// 	break;
+		//	it = 2;
+		//	break;
 		// }	
 	}
 

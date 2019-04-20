@@ -227,8 +227,8 @@ void glaz_try_move(unsigned char p)
 
 	// bonus
 	_t = get_tile();
-	 if (BONUS_TILE(_t)) 
-	 	glaz_get_bonus(it);
+	if (BONUS_TILE(_t)) 
+		glaz_get_bonus(it);
 
 	play_step_sound();
 }

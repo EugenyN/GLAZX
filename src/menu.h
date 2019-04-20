@@ -16,7 +16,7 @@ void main_menu();
 
 void mode_menu_select(unsigned char item)
 {
-	print_str(rdx, rdy,  71, " ");
+	print_str(rdx, rdy, 71, " ");
 	rdx = MODE_MENU_X - 1;
 	rdy = MODE_MENU_Y + item;
 	print_str(rdx, rdy,  GLAZ_COLOR, GLAZ_SYMBOL);
@@ -95,7 +95,7 @@ void sfx_menu()
 
 	jt = 0;
 	while (1) {
-		print_str(13,  12,  71, "SFX:");
+		print_str(13, 12, 71, "SFX:");
 		print_number2(17, 12, INK_WHITE,  jt);
 		SCREEN_UPDATE;
 
@@ -164,7 +164,7 @@ void main_menu_select(unsigned char item)
 		rdy = MAIN_MENU_Y + item;
 	}
 
-	print_str(rdx, rdy,  GLAZ_COLOR, GLAZ_SYMBOL);
+	print_str(rdx, rdy, GLAZ_COLOR, GLAZ_SYMBOL);
 	print_str(rdx + MAIN_MENU_WIDTH, rdy,  GLAZ_COLOR, GLAZ_SYMBOL2);
 	SCREEN_UPDATE;
 }

@@ -3,7 +3,7 @@
 #define SCREEN_UPDATE	sp1_UpdateNow()
 
 #ifndef NULL
-#define NULL    ((uchar *)0)
+#define NULL	((uchar *)0)
 #endif
 
 void splib_init()
