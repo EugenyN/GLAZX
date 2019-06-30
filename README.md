@@ -1,5 +1,3 @@
-![GLAZX logo](/web/logo.png)
-
 # GLAZX
 
 a small, open-source game for **ZX Spectrum 48/128** in classic arcade style.
@@ -45,6 +43,7 @@ In the options menu you can choose the alternative control including **Kempston*
 Ready for play .tap files:
 * [GLAZX v1.0](https://github.com/EugenyN/GLAZX/releases/download/v1.0/glazx48.tap) for Spectrum 48
 * [GLAZX v1.0 128](https://github.com/EugenyN/glazx/releases/download/v1.0/glazx128.tap) for Spectrum 128
+* Also, the game is available on Itch.io: https://eugenyn.itch.io/glazx
 
 ## How to load
 
