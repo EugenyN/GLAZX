@@ -50,7 +50,7 @@ Ready for play .tap files:
 * Spectrum 128/+2/+3: to load the 128 Version select "Loader" from the main menu and press ENTER, then PLAY on tape.
 * Spectrum 48/+: to load 48 Version type LOAD "" and press ENTER, then PLAY on tape.
 * If you don’t have the hardware, you can still play it in an emulator. E.g. you can use [Fuse](http://fuse-emulator.sourceforge.net/) for Windows and Linux.
-* You can also [play it online](http://torinak.com/qaop) thanks to Qaop/JS.
+* You can also play it online using [Qaop/JS](http://torinak.com/qaop) or [R.A.Z.E.](https://rodrigorc.github.io/raze)
  
 ## How to build (for Windows)
 
